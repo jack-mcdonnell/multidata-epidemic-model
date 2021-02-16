@@ -6,7 +6,7 @@ function plotInference(figsFolder,targetParams,burnIn,maxIter,...
 plotSamples(targetParams,proposals,samples,sampleMeans,burnIn,maxIter,figsFolder)
 
 % Plot distributions of rejected samples
-plotDistributionRejectedSamples(targetParams,rejectedSamples,burnIn,maxIter,figsFolder)
+plotDistributionRejectedSamples(targetParams,rejectedSamples,burnIn,figsFolder)
 
 % Plot acceptance rates
 plotAcceptanceRates(burnIn,maxIter,acceptRates,figsFolder)
@@ -120,14 +120,15 @@ end
 
 plotName = 'MHresults';
 figTitle = [plotName,'.png'];
-saveas(gcf, [figsFolder, figTitle])
+saveas(gcf, [figsFolder,'/',figTitle])
 
 end
 
 
-function plotDistributionRejectedSamples(targetParams,rejectedSamples,figsFolder)
+function plotDistributionRejectedSamples(targetParams,rejectedSamples,burnIn,figsFolder)
 % Plot distribution of rejected samples
 
+fs = 14;
 interp = 'latex';
 
 figure('Position', [250 250 900 1000])
@@ -155,7 +156,7 @@ end
 
 plotName = 'rejectedDistributions';
 figTitle = [plotName, '.png'];
-saveas(gcf, [figsFolder, figTitle])
+saveas(gcf, [figsFolder,'/',figTitle])
 end
 
 
@@ -179,7 +180,7 @@ set(gca,'FontSize',fs,'TickLabelInterpreter','latex')
 
 plotName = 'acceptanceRates';
 figTitle = [plotName, '.png'];
-saveas(gcf, [figsFolder, figTitle])
+saveas(gcf, [figsFolder,'/',figTitle])
 end
 
 
