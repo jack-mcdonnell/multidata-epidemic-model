@@ -5,8 +5,8 @@ function [simParams,transmissionParams,observationParams,priorParams] = setParam
 population  = 1e5;          % Set homogeneous popn
 numDays	    = 98;           % max number of days in sim
 tau	        = 0.1;          % time step for tau-leap algorithm
-numReps     = 10;           % number of reps for pseudomarginal estimate
-numIters    = 100;           % number of iterations for Metropolis-Hastings
+numReps     = 100;          % number of reps for pseudomarginal estimate
+numIters    = 1000;         % number of iterations for Metropolis-Hastings
 saveFreq    = 100;          % save results every saveFreq iterations
 recordDaily = 0;            % boolean, to record infection data daily
 
